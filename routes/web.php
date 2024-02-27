@@ -1,6 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\JuicioController;
 
 /*
 |--------------------------------------------------------------------------
@@ -16,3 +17,7 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', function () {
     return view('welcome');
 });
+
+Route::get('/juicio', [JuicioController::class,'index'])->name('juicio.index');
+
+Route::post('/juicioImport', [JuicioController::class,'import'] )->name('juicio.import');
